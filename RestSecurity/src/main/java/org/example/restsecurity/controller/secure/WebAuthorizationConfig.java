@@ -13,6 +13,18 @@ public class WebAuthorizationConfig {
     SecurityFilterChain configure(HttpSecurity http)
             throws Exception {
         http.httpBasic(Customizer.withDefaults());
+
+        /**
+         *   var user = User.withUsername("john")              ①
+         *         .password("12345")
+         *         .authorities("read")
+         *         .build();
+         *
+         *     var userDetailsService =                          ②
+         *         new InMemoryUserDetailsManager(user);
+         *
+         *     http.userDetailsService(userDetailsService);
+         */
         http.authorizeHttpRequests(
                 c -> c.anyRequest().authenticated()
         );
