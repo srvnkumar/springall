@@ -6,14 +6,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class RecommendedMovies {
 
-    Filter fantasyMovies;
+    Filter filter;
 
 
-    public RecommendedMovies(Filter filter) {
-        this.fantasyMovies = filter;
+    public RecommendedMovies(Filter fantasyMovies) {
+        this.filter = fantasyMovies;
     }
 
     public String[] getMovies() {
-        return fantasyMovies.getMovies();
+        return filter.getMovies();
     }
 }
