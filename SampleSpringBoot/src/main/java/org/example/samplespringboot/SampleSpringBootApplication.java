@@ -12,8 +12,8 @@ public class SampleSpringBootApplication {
     public static void main(String[] args) {
 
         ApplicationContext context = SpringApplication.run(SampleSpringBootApplication.class, args);
-        FantasyMovies fantasyMovies = context.getBean(FantasyMovies.class);
-        System.out.println(Arrays.toString(fantasyMovies.getMovies()));
+        RecommendedMovies movies = context.getBean(RecommendedMovies.class);
+        System.out.println(Arrays.toString(movies.getMovies()));
     }
 
 }
