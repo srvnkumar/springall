@@ -1,19 +1,20 @@
 package org.example.samplespringboot;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class RecommendedMovies {
 
-    Filter filter;
+    Filter fantasyMovies;
 
 
-    public RecommendedMovies(Filter fantasyMovies) {
-        this.filter = fantasyMovies;
+    public RecommendedMovies(@Qualifier("horror") Filter fantasyMovies) {
+        this.fantasyMovies = fantasyMovies;
     }
 
     public String[] getMovies() {
-        return filter.getMovies();
+        return fantasyMovies.getMovies();
     }
 }
